@@ -8,7 +8,7 @@ router.get("/test", (req, res) => {
   res.status(200).send("API Working Perfectly");
 });
 
-router.get("/api/getNewAccessToken", async (req, res) => {
+router.get("/getNewAccessToken", async (req, res) => {
   console.log(process.env.ACCESS_TOKEN);
   res.redirect(
     `https://github.com/login/oauth/authorize?client_id=${process.env.CLIENT_ID}`
