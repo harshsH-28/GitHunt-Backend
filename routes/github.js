@@ -73,13 +73,14 @@ router.get("/:user", async (req, res) => {
         name: obj.name,
         desc: obj.description,
         languages: obj.language,
+        url: obj.html_url,
       };
     });
     myuser.repos = userRepos;
     res.status(200).json(myuser);
   } catch (e) {
     console.log(e);
-    res.status(400).json({ message: "Error" });
+    res.status(404).json({ message: "Not Found" });
   }
 });
 
